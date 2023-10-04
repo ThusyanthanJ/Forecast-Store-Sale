@@ -1,9 +1,17 @@
 .App {
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  background-color: rgb(225, 229, 248);
 }
 
 .App-logo {
-  height: 40vmin;
+  margin-left: 2%;
+  background-color: #61dafb;
+  border-radius: 100%;
+  padding: 1%;
+  height: 6vmin;
+  width: 6vmin;
   pointer-events: none;
 }
 
@@ -15,17 +23,189 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-title {
+  padding-left: 2%;
+  align-items: center;
+  justify-items: center;
+  color:darkgray;
+}
 
-.App-link {
-  color: #61dafb;
+.App-footer {
+  background-color: #282c34;
+  justify-content: center;
+  color: lightblue;
+  flex: content;
+  margin-top: 0%;
+  padding: 1%;
+  min-height:min-content;
+}
+
+#store {
+
+  padding: 3%;
+  width: 45%;
+  height: 5%;
+  border-radius: 3vb;
+  background-color:rgb(215, 215, 215);
+  }
+  
+.store-option {
+  display: flex;
+  padding: 3%;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  height: 5%;
+  border-radius: 3vb;
+  background-color:rgb(215, 215, 215);
+  width: 100%;
+  }
+.sales-value{
+  background-color: rgb(199, 203, 214);
+  height: 15vh;
+  margin-top: 3vh;
+  padding-bottom: 3vh;
+  
+}
+
+.left-store {
+  margin-top: 3%;
+  display: flex;
+  padding: 3%;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: 5%;
+  border-radius: 3vb;
+  background-color:rgb(215, 215, 215);
+  margin-left: 10%; /* Add margin to separate the two divisions */
+}
+
+.right-store {
+  margin-top: 3%;
+  display: flex;
+  padding: 3%;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: 5%;
+  border-radius: 3vb;
+  background-color:rgb(215, 215, 215);
+  /* margin-left: 1px; Add margin to separate the two divisions */
+  margin-right: 10%;
+
+}
+
+#store-inline {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#date-picker {
+  margin-top: 1%;
+  width: 40%;
+  flex-direction: row;
+  padding: 1vh;
+  border-radius: 1vb;
+  border-color:white;
+}
+.date {
+  justify-content: center;
+  margin-top: 5%;  
+  width: 30%;
+  border-radius: 3vh;
+  margin-left: 35%;
+  background-color:rgb(215, 215, 215);
+}
+
+.button {
+  margin-top: 5%;
+}
+.btn {
+  background: #22acd2;
+  border: 0px solid #4dd5fa;
+  border-radius: 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: all .25s ease;
+  width: 210px;
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+.btn:not(.loading):hover {
+  box-shadow: 0px 10px 25px 0px rgba(49, 129, 203, 0.4);
+}
+.loading-animate {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+  border-radius: 50%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: all .25s ease;
+}
+.loading-animate:after {
+  content: '';
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-left: 3px solid #fff;
+  animation: loading infinite .8s ease .05s;
+  position: absolute;
+}
+.loading-animate:before {
+  content: '';
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-left: 3px solid #fff;
+  animation: loading infinite .8s linear;
+  position: absolute;
+  opacity: .6;
+}
+.btn.loading {
+  width: 60px;
+}
+.btn.loading i {
+  transform: rotate(-90deg);
+  padding-bottom: 4px;
+  padding-left: 3px;
+}
+.btn.loading .text {
+  transform: translate(-140px);
+}
+.btn.loading .loading-animate {
+  opacity: 1;
+}
+
+@keyframes loading {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +216,4 @@
     transform: rotate(360deg);
   }
 }
+
